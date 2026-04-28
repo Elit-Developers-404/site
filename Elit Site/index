@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elit Developers Lab - Projeler</title>
+    <style>
+        /* Genel Tasarım */
+        body {
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00ffcc;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+            margin-bottom: 30px;
+        }
+
+        /* Kart Konteyneri */
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+        }
+
+        /* Oyun Kutuları */
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00ffcc;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        /* İnstall Butonu */
+        .btn-install {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #00ffcc;
+            color: #0f0f0f;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .btn-install:hover {
+            background-color: #00cca3;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Elit Developers Lab</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Poxel.io</h2>
+            <p>Poxel.io için geliştirilmiş özel script ve modifikasyonlar.</p>
+            <a href="BURAYA_INDIRME_LINKINI_YAZ" class="btn-install">Install</a>
+        </div>
+
+        <div class="card">
+            <h2>VSC</h2>
+            <p>Visual Studio Code projeleri ve geliştirici araçları.</p>
+        </div>
+
+        <div class="card">
+            <h2>IO Oyunları</h2>
+            <p>Favori .io oyunları için hazırlanan projeler ve dashboardlar.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 ElitHan - Tüm Hakları Saklıdır.
+    </footer>
+
+</body>
+</html><img src="img/logo.ico" alt="Logo" class="site-logo">

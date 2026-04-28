@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elit Developers</title>
+    
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+
+    <style>
+        body {
+            background: linear-gradient(180deg, #443d00 0%, #665c00 30%, #000000 85%);
+            background-attachment: fixed;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            min-height: 100vh;
+            user-select: none; 
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .site-logo {
+            width: 120px;
+            height: auto;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 15px rgba(251, 255, 0, 0.6));
+            z-index: 10;
+        }
+
+        h1 {
+            color: #fbff00;
+            text-shadow: 0 0 15px rgba(251, 255, 0, 0.6);
+            margin-bottom: 40px;
+            z-index: 10;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1100px;
+            z-index: 10;
+        }
+
+        .divider {
+            width: 100%;
+            max-width: 1100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fbff00, transparent);
+            margin: 50px 0 20px 0;
+            z-index: 10;
+        }
+
+        .section-title {
+            color: #fbff00;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 10;
+        }
+
+        .card {
+            background-color: rgba(20, 20, 20, 0.9);
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #fbff00;
+            box-shadow: 0 0 20px rgba(251, 255, 0, 0.2);
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            color: #fff;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fbff00;
+            color: #0f0f0f;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #d4da00;
+            transform: scale(1.05);
+        }
+
+        /* Discord Butonu Özel Stili */
+        .discord-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+            padding: 15px 30px;
+            background-color: #5865F2; /* Discord Mavisi */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(88, 101, 242, 0.4);
+            z-index: 10;
+        }
+
+        .discord-btn:hover {
+            background-color: #4752c4;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(88, 101, 242, 0.6);
+        }
+
+        .discord-btn img {
+            width: 25px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .btn.coming-soon {
+            background-color: #333;
+            color: #777;
+            pointer-events: none;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px 20px 20px 20px;
+            font-size: 0.8em;
+            color: #777;
+            z-index: 10;
+        }
+
+        .trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #fbff00;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            transition: transform 0.1s ease-out, opacity 0.5s ease-out;
+            box-shadow: 0 0 10px #fbff00;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <img src="img/logo.png" alt="Logo" class="site-logo">
+
+    <h1>Games</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Poxel.io</h2>
+            <p>Free cheat for Poxel.io</p>
+            <a href="https://raw.githubusercontent.com/Elit-Developers-404/Internal-Poxel.io/refs/heads/main/Main.user.js" class="btn">Install</a>
+        </div>
+        <div class="card"><h2>Veck.io</h2><p>Coming soon...</p><span class="btn coming-soon">Coming Soon</span></div>
+        <div class="card"><h2>Plundur.io</h2><p>Coming soon...</p><span class="btn coming-soon">Coming Soon</span></div>
+        <div class="card"><h2>Overtide.io</h2><p>Coming soon...</p><span class="btn coming-soon">Coming Soon</span></div>
+        <div class="card"><h2>KourStrike.io</h2><p>Coming soon...</p><span class="btn coming-soon">Coming Soon</span></div>
+        <div class="card"><h2>FoodStars.io</h2><p>Coming soon...</p><span class="btn coming-soon">Coming Soon</span></div>
+        <div class="card"><h2>KourZone.io</h2><p>Coming soon...</p><span class="btn coming-soon">Coming Soon</span></div>
+    </div>
+
+    <div class="divider"></div>
+    <h2 class="section-title">Other</h2>
+
+    <div class="container">
+        <div class="card">
+            <h2>Ad-Block</h2>
+            <p>Ad-Block For all Legion Games</p>
+            <a href="https://raw.githubusercontent.com/Elit-Developers-404/Internal-Poxel.io/refs/heads/main/Main.user.js" class="btn">Install</a>
+        </div>
+    </div>
+
+    <a href="https://discord.gg/7DP7DgCJFf" class="discord-btn">
+        <img src="img/logo.png" alt="Elit Logo">
+        Join Discord
+    </a>
+
+    <footer>
+        © 2026 Elit Development - All Rights Reserved
+    </footer>
+
+    <script>
+        // Fare İzi Efekti
+        document.addEventListener('mousemove', function(e) {
+            const trail = document.createElement('div');
+            trail.className = 'trail';
+            trail.style.left = e.clientX + 'px';
+            trail.style.top = e.clientY + 'px';
+            document.body.appendChild(trail);
+            setTimeout(() => {
+                trail.style.transform = 'scale(2.5)';
+                trail.style.opacity = '0';
+            }, 50);
+            setTimeout(() => { trail.remove(); }, 550);
+        });
+
+        // TAM KORUMA
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) return false;
+            if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74)) return false;
+            if(e.ctrlKey && e.keyCode == 85) return false;
+            if(e.ctrlKey && e.keyCode == 83) return false;
+            if(e.ctrlKey && e.keyCode == 80) return false;
+        };
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+
+</body>
+</html>
