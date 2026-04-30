@@ -155,7 +155,14 @@
             text-align: center;
             z-index: 10;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
+        }
+
+        .quote-container {
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            cursor: crosshair;
         }
 
         .quote-main {
@@ -164,14 +171,14 @@
             color: #fbff00;
             text-shadow: 0 0 10px rgba(251, 255, 0, 0.4);
             margin: 0;
+            transition: all 0.4s ease;
         }
 
         .quote-sub {
-            font-style: italic;
-            font-size: 1.2em;
+            font-weight: bold;
+            font-size: 1.1em;
             color: #fbff00;
-            text-shadow: 0 0 10px rgba(251, 255, 0, 0.4);
-            margin: 0;
+            margin: 10px 0 0 0;
         }
 
         .copyright {
@@ -179,6 +186,7 @@
             font-size: 0.8em;
             border-top: 1px solid #222;
             padding-top: 15px;
+            margin-top: 20px;
         }
 
         .trail {
@@ -191,13 +199,6 @@
             z-index: 1;
             transition: transform 0.1s ease-out, opacity 0.5s ease-out;
             box-shadow: 0 0 10px #fbff00;
-
-        .footer p:hover {
-            color: #fff;
-            text-shadow: 0 0 20px #fbff00;
-            transition: 0.5s;
-            cursor: default;
-    
         }
     </style>
 </head>
@@ -238,27 +239,54 @@
     </a>
 
     <footer>
-        <p class="quote-main">"The road to the top isn't easy; you either stumble over a stone and give up, or you pick up that stone and use it as a stepping stone to climb higher. The choice is yours, but remember: If the stage isn't yours, don't expect applause."</p>
-        <p class="quote-sub">"ElitHan"</p>
+        <div class="quote-container" id="quoteContainer">
+            <p class="quote-main">"The road to the top isn't easy; you either stumble over a stone and give up, or you pick up that stone and use it as a stepping stone to climb higher. The choice is yours, but remember: If the stage isn't yours, don't expect applause."</p>
+            <p class="quote-sub">"ElitHan"</p>
+        </div>
         <div class="copyright">
             © 2026 Elit Development - All Rights Reserved
         </div>
     </footer>
 
     <script>
-        document.addEventListener('mousemove', function(e) {
-            const trail = document.createElement('div');
-            trail.className = 'trail';
-            trail.style.left = e.clientX + 'px';
-            trail.style.top = e.clientY + 'px';
-            document.body.appendChild(trail);
-            setTimeout(() => {
-                trail.style.transform = 'scale(2.5)';
-                trail.style.opacity = '0';
-            }, 50);
-            setTimeout(() => { trail.remove(); }, 550);
+        let isOverQuote = false;
+        const quoteContainer = document.getElementById('quoteContainer');
+
+        // Yazının üzerine gelindiğini kontrol et
+        quoteContainer.addEventListener('mouseenter', () => {
+            isOverQuote = true;
+            const quoteText = quoteContainer.querySelector('.quote-main');
+            quoteText.style.textShadow = "0 0 30px #fbff00";
+            quoteText.style.color = "#fff";
+            quoteText.style.transform = "scale(1.02)";
         });
 
+        quoteContainer.addEventListener('mouseleave', () => {
+            isOverQuote = false;
+            const quoteText = quoteContainer.querySelector('.quote-main');
+            quoteText.style.textShadow = "0 0 10px rgba(251, 255, 0, 0.4)";
+            quoteText.style.color = "#fbff00";
+            quoteText.style.transform = "scale(1)";
+        });
+
+        // Genel fare izi (isOverQuote false ise çalışır)
+        document.addEventListener('mousemove', function(e) {
+            if (!isOverQuote) {
+                const trail = document.createElement('div');
+                trail.className = 'trail';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                document.body.appendChild(trail);
+                
+                setTimeout(() => {
+                    trail.style.transform = 'scale(2.5)';
+                    trail.style.opacity = '0';
+                }, 50);
+                setTimeout(() => { trail.remove(); }, 550);
+            }
+        });
+
+        // Engellemeler
         document.onkeydown = function(e) {
             if(e.keyCode == 123) return false;
             if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74)) return false;
@@ -266,7 +294,6 @@
             if(e.ctrlKey && e.keyCode == 83) return false;
             if(e.ctrlKey && e.keyCode == 80) return false;
         };
-
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 
