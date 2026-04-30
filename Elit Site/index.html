@@ -114,7 +114,6 @@
             transform: scale(1.05);
         }
 
-        /* Discord Butonu Özel Stili */
         .discord-btn {
             display: flex;
             align-items: center;
@@ -122,7 +121,7 @@
             gap: 10px;
             margin: 40px 0;
             padding: 15px 30px;
-            background-color: #5865F2; /* Discord Mavisi */
+            background-color: #5865F2; 
             color: white;
             text-decoration: none;
             font-weight: bold;
@@ -152,10 +151,34 @@
 
         footer {
             margin-top: auto;
-            padding: 40px 20px 20px 20px;
-            font-size: 0.8em;
-            color: #777;
+            padding: 60px 20px 40px 20px;
+            text-align: center;
             z-index: 10;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .quote-main {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #fbff00;
+            text-shadow: 0 0 10px rgba(251, 255, 0, 0.4);
+            margin: 0;
+        }
+
+        .quote-sub {
+            font-size: 0.9em;
+            color: #777;
+            margin: 10px 0 20px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .copyright {
+            color: #444;
+            font-size: 0.8em;
+            border-top: 1px solid #222;
+            padding-top: 15px;
         }
 
         .trail {
@@ -208,11 +231,14 @@
     </a>
 
     <footer>
-        © 2026 Elit Development - All Rights Reserved
+        <p class="quote-main">"Zirveye çıkan yollar konforlu değildir; ya ayağın taşa takılır pes edersin, ya da o taşı alır basamak yapar yükselirsin."</p>
+        <p class="quote-sub">Sahne senin değilse, alkış beklemeyeceksin.</p>
+        <div class="copyright">
+            © 2026 Elit Development - All Rights Reserved
+        </div>
     </footer>
 
     <script>
-        // Fare İzi Efekti
         document.addEventListener('mousemove', function(e) {
             const trail = document.createElement('div');
             trail.className = 'trail';
@@ -226,7 +252,6 @@
             setTimeout(() => { trail.remove(); }, 550);
         });
 
-        // TAM KORUMA
         document.onkeydown = function(e) {
             if(e.keyCode == 123) return false;
             if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74)) return false;
